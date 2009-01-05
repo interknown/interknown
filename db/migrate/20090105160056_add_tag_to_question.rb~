@@ -1,0 +1,9 @@
+class AddTagToQuestion.rb < ActiveRecord::Migration
+  def self.up
+    add_column :question.rbs, :tag, :string
+  end
+
+  def self.down
+    remove_column :question.rbs, :tag
+  end
+end

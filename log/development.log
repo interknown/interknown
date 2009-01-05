@@ -1,0 +1,256 @@
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (7.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (4.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateQuestions (20090105154453)
+  [4;36;1mSQL (6.9ms)[0m   [0;1mCREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author" varchar(255), "question" text, "answer" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (7.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090105154453')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("questions")[0m
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-01-05 09:47:41) [GET]
+  [4;36;1mQuestion Load (0.6ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering template within layouts/questions
+Rendering questions/index
+Completed in 14ms (View: 5, DB: 1) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2009-01-05 09:47:50) [GET]
+Rendering template within layouts/questions
+Rendering questions/new
+Completed in 20ms (View: 9, DB: 0) | 200 OK [http://localhost/questions/new]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-01-05 09:48:18) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"e4afebb2f3618772867f1c6ac5a19361f2c81737", "question"=>{"author"=>"irvin", "question"=>"Where are the rubies?", "answer"=>"On the rail!"}}
+  [4;35;1mQuestion Create (0.6ms)[0m   [0mINSERT INTO "questions" ("created_at", "author", "updated_at", "question", "answer") VALUES('2009-01-05 15:48:18', 'irvin', '2009-01-05 15:48:18', 'Where are the rubies?', 'On the rail!')[0m
+Redirected to #<Question:0xb69fc6ec>
+Completed in 31ms (DB: 1) | 302 Found [http://localhost/questions]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-01-05 09:48:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Load (0.7ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 1) [0m
+Rendering template within layouts/questions
+Rendering questions/show
+Completed in 26ms (View: 9, DB: 1) | 200 OK [http://localhost/questions/1]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-01-05 09:48:23) [GET]
+  [4;35;1mQuestion Load (1.0ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering template within layouts/questions
+Rendering questions/index
+Completed in 27ms (View: 14, DB: 1) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#edit (for 127.0.0.1 at 2009-01-05 09:48:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Load (0.5ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 1) [0m
+Rendering template within layouts/questions
+Rendering questions/edit
+Completed in 20ms (View: 8, DB: 0) | 200 OK [http://localhost/questions/1/edit]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-01-05 09:48:54) [GET]
+  [4;35;1mQuestion Load (0.7ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering template within layouts/questions
+Rendering questions/index
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-01-05 09:48:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Load (0.7ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 1) [0m
+Rendering template within layouts/questions
+Rendering questions/show
+Completed in 26ms (View: 10, DB: 1) | 200 OK [http://localhost/questions/1]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-01-05 09:48:58) [GET]
+  [4;35;1mQuestion Load (0.7ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering template within layouts/questions
+Rendering questions/index
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://localhost/questions]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateQuestions (20090105154453)
+Migrating to AddTagToQuestion (20090105160056)
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateQuestions (20090105154453)
+Migrating to AddTagToQuestion (20090105160056)
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateQuestions (20090105154453)
+Migrating to AddTagToQuestion (20090105160056)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mALTER TABLE "questions" ADD "tag" varchar(255)[0m
+  [4;36;1mSQL (11.4ms)[0m   [0;1mVACUUM[0m
+  [4;35;1mSQL (10.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090105160056')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("questions")[0m
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-01-05 10:06:35) [GET]
+  [4;36;1mQuestion Load (1.1ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering template within layouts/questions
+Rendering questions/index
+Completed in 24ms (View: 10, DB: 1) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-01-05 10:06:38) [GET]
+  [4;35;1mQuestion Load (1.1ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering template within layouts/questions
+Rendering questions/index
+Completed in 29ms (View: 15, DB: 1) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-01-05 10:06:39) [GET]
+  [4;36;1mQuestion Load (1.1ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering template within layouts/questions
+Rendering questions/index
+Completed in 25ms (View: 11, DB: 1) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-01-05 10:06:40) [GET]
+  [4;35;1mQuestion Load (1.1ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering template within layouts/questions
+Rendering questions/index
+Completed in 28ms (View: 15, DB: 1) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2009-01-05 10:06:46) [GET]
+Rendering template within layouts/questions
+Rendering questions/new
+Completed in 28ms (View: 13, DB: 0) | 200 OK [http://localhost/questions/new]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-01-05 10:07:03) [GET]
+  [4;36;1mQuestion Load (0.9ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering template within layouts/questions
+Rendering questions/index
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/questions/]
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2009-01-05 10:07:05) [GET]
+Rendering template within layouts/questions
+Rendering questions/new
+Completed in 28ms (View: 13, DB: 0) | 200 OK [http://localhost/questions/new]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-01-05 10:10:52) [GET]
+  [4;35;1mQuestion Load (1.1ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering template within layouts/questions
+Rendering questions/index
+Completed in 29ms (View: 15, DB: 1) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2009-01-05 10:10:57) [GET]
+Rendering template within layouts/questions
+Rendering questions/new
+Completed in 29ms (View: 14, DB: 0) | 200 OK [http://localhost/questions/new]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-01-05 10:11:41) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"e4afebb2f3618772867f1c6ac5a19361f2c81737", "question"=>{"author"=>"irvin", "tag"=>"RoR", "question"=>"Why aren't the views updated automatically?", "answer"=>"good question"}}
+  [4;36;1mQuestion Create (0.4ms)[0m   [0;1mINSERT INTO "questions" ("created_at", "author", "updated_at", "tag", "question", "answer") VALUES('2009-01-05 16:11:41', 'irvin', '2009-01-05 16:11:41', 'RoR', 'Why aren''t the views updated automatically?', 'good question')[0m
+Redirected to #<Question:0xb698e4a8>
+Completed in 20ms (DB: 0) | 302 Found [http://localhost/questions]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-01-05 10:11:41) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 2) [0m
+Rendering template within layouts/questions
+Rendering questions/show
+Completed in 18ms (View: 7, DB: 0) | 200 OK [http://localhost/questions/2]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-01-05 10:11:44) [GET]
+  [4;36;1mQuestion Load (1.4ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering template within layouts/questions
+Rendering questions/index
+Completed in 31ms (View: 17, DB: 1) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-01-05 10:23:10) [GET]
+  [4;35;1mQuestion Load (1.3ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering template within layouts/questions
+Rendering questions/index
+Completed in 38ms (View: 23, DB: 1) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2009-01-05 10:23:11) [GET]
+Rendering template within layouts/questions
+Rendering questions/new
+Completed in 21ms (View: 11, DB: 0) | 200 OK [http://localhost/questions/new]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-01-05 10:23:15) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"e4afebb2f3618772867f1c6ac5a19361f2c81737", "question"=>{"author"=>"", "tag"=>"", "question"=>"", "answer"=>""}}
+Rendering template within layouts/questions
+Rendering questions/new
+Completed in 56ms (View: 8, DB: 0) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-01-05 10:35:58) [GET]
+  [4;36;1mQuestion Load (0.9ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering template within layouts/questions
+Rendering questions/index
+Completed in 22ms (View: 11, DB: 1) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-01-05 10:36:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Load (0.7ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 1) [0m
+Rendering template within layouts/questions
+Rendering questions/show
+Completed in 447ms (View: 430, DB: 1) | 200 OK [http://localhost/questions/1]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-01-05 10:36:03) [GET]
+  [4;36;1mQuestion Load (1.4ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering template within layouts/questions
+Rendering questions/index
+Completed in 28ms (View: 14, DB: 1) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-01-05 10:48:07) [GET]
+  [4;35;1mQuestion Load (1.0ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering template within layouts/questions
+Rendering questions/index
+Completed in 24ms (View: 11, DB: 1) | 200 OK [http://localhost/questions]
