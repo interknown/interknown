@@ -1,12 +1,14 @@
 class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.xml
+  before_filter :login_required
   def index
     @questions = Question.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @questions }
+      format.atom
     end
   end
 
@@ -82,4 +84,11 @@ class QuestionsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def rss
+    #headers["Content-Type"] = "application/xml"
+    @questions = Question.find(:all)
+    render :layout => false
+  end
+
 end

@@ -5,7 +5,6 @@
     <th>Author</th>
     <th>Question</th>
     <th>Answer</th>
-    <th>Tag</th>
   </tr>
 
 <% for question in @questions %>
@@ -13,7 +12,6 @@
     <td><%=h question.author %></td>
     <td><%=h question.question %></td>
     <td><%=h question.answer %></td>
-    <td><%=h question.tag %></td>
     <td><%= link_to 'Show', question %></td>
     <td><%= link_to 'Edit', edit_question_path(question) %></td>
     <td><%= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete %></td>

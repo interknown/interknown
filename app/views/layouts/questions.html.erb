@@ -5,6 +5,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Questions: <%= controller.action_name %></title>
+  <%= auto_discovery_link_tag :atom, formatted_questions_path(:atom) %>
   <%= stylesheet_link_tag 'scaffold', 'interknown' %>
 </head>
 <body>
